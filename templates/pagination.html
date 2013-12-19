@@ -1,0 +1,15 @@
+{% if DEFAULT_PAGINATION %}
+<ul class="pagination">
+    {% if articles_page.has_previous() %}
+        {% if articles_page.previous_page_number() == 1 %}
+            <li><a href="{{ SITEURL }}/{{ page_name }}.html">← Previous</a></li>
+        {% else %}
+            <li class="prev"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html">← Previous</a></li>
+        {% endif %}
+    {% endif %}
+    <li><span>Halamen <b>{{ articles_page.number }}</b> arah <b>{{ articles_paginator.num_pages }}</b> halamen.</span></li>
+    {% if articles_page.has_next() %}
+       <li><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">Next →</a></li>
+    {% endif %}
+</ul>
+{% endif %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ article.title }}
+{%endblock%}
+
+
+{% block content %}
+    <header>
+        <h1>{{ article.title }}</h1>
+        <hr> 
+        <p class="alignright">Itulis <b>{{ AUTHOR }}</b> bas <b>{{ article.locale_date }}</b></p>
+        <div style="clear: both;"></div>
+    </header>
+    {{ article.content }}
+{% endblock %}
+<hr>
